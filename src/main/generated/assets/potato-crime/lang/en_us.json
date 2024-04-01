@@ -1,5 +1,7 @@
 {
+  "entity.potato-crime.potato_guard": "Potato Guard",
   "item.potato-crime.contraband": "Contraband",
   "potato-crime.text.fill-level": "Hidden carrots: %s/1000.",
+  "potato-crime.text.item-group": "Potato Crimes",
   "potato-crime.text.no-carrots": "No carrots to deposit."
 }

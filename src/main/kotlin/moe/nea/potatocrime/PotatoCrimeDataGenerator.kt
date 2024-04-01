@@ -8,13 +8,16 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
 import net.minecraft.data.client.BlockStateModelGenerator
 import net.minecraft.data.client.ItemModelGenerator
 import net.minecraft.data.client.Models
 import net.minecraft.data.server.recipe.RecipeExporter
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder
+import net.minecraft.item.Item
 import net.minecraft.item.Items
 import net.minecraft.recipe.book.RecipeCategory
+import net.minecraft.registry.RegistryKeys
 import net.minecraft.registry.RegistryWrapper
 import java.util.concurrent.CompletableFuture
 
@@ -24,6 +27,19 @@ class PotatoCrimeDataGenerator : DataGeneratorEntrypoint {
         pack.addProvider(::NameProvider)
         pack.addProvider(::RecipeProvider)
         pack.addProvider(::DefaultModels)
+        pack.addProvider(::TagProvider)
+    }
+}
+
+class TagProvider(
+    output: FabricDataOutput?, registriesFuture: CompletableFuture<RegistryWrapper.WrapperLookup>?,
+) : FabricTagProvider<Item>(output, RegistryKeys.ITEM, registriesFuture) {
+    override fun configure(wrapperLookup: RegistryWrapper.WrapperLookup) {
+        getOrCreateTagBuilder(PotatoRegistry.carrotIshItems)
+            .add(Items.CARROT)
+            .add(Items.CARROT_ON_A_STICK)
+            .add(Items.GOLDEN_CARROT)
+            .add(Items.ORANGE_DYE)
     }
 }
 
@@ -36,7 +52,6 @@ class RecipeProvider(
             .input(Items.PAPER, 3)
             .input(Items.BROWN_DYE)
             .input(Items.CARROT)
-            .criterion(hasItem(Items.PAPER), conditionsFromItem(Items.PAPER))
             .criterion(hasItem(Items.CARROT), conditionsFromItem(Items.CARROT))
             .offerTo(exporter)
     }
@@ -60,6 +75,7 @@ class NameProvider(dataOutput: FabricDataOutput, registryLookup: CompletableFutu
         registryLookup: RegistryWrapper.WrapperLookup,
         translationBuilder: TranslationBuilder
     ) {
+        translationBuilder.add(PotatoRegistry.potatoGuard, "Potato Guard")
         translationBuilder.add(PotatoRegistry.contraband, "Contraband")
         PotatoTranslations.allTranslations.forEach {
             translationBuilder.add(it.translationKey, it.default)

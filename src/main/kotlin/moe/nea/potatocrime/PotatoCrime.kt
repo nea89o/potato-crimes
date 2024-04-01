@@ -1,7 +1,9 @@
 package moe.nea.potatocrime
 
+import moe.nea.potatocrime.entity.PotatoGuardEntity
 import moe.nea.potatocrime.registry.PotatoRegistry
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
 import org.slf4j.LoggerFactory
 
 object PotatoCrime : ModInitializer {
@@ -15,5 +17,6 @@ object PotatoCrime : ModInitializer {
 		// Proceed with mild caution.
 		logger.info("Hello Fabric world!")
 		PotatoRegistry.registerAll()
+		FabricDefaultAttributeRegistry.register(PotatoRegistry.potatoGuard, PotatoGuardEntity.createMobAttributes())
 	}
 }

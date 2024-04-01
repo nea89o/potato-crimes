@@ -12,6 +12,7 @@ base {
 }
 
 repositories {
+	mavenLocal()
 }
 
 loom {

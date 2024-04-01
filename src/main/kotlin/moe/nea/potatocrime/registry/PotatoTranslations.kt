@@ -19,6 +19,7 @@ object PotatoTranslations {
     }
 
     val noCarrotsToDeposit = PT("no-carrots", "No carrots to deposit.")
+    val itemGroup = PT("item-group", "Potato Crimes")
     val contrabandFillText = PT("fill-level", "Hidden carrots: %s/1000.")
 
 }
