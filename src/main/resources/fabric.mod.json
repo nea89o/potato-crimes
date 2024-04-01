@@ -1,0 +1,53 @@
+{
+	"schemaVersion": 1,
+	"id": "potato-crime",
+	"version": "${version}",
+	"name": "Potato Crime",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/potato-crime/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "moe.nea.potatocrime.PotatoCrime",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "moe.nea.potatocrime.PotatoCrimeClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "moe.nea.potatocrime.PotatoCrimeDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"potato-crime.mixins.json",
+		{
+			"config": "potato-crime.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.9",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-language-kotlin": ">=1.9.23"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
