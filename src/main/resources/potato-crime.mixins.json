@@ -1,11 +1,12 @@
 {
-	"required": true,
-	"package": "moe.nea.potatocrime.mixin",
-	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-		"ExampleMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "moe.nea.potatocrime.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ExampleMixin",
+    "OnEnterPotatoWorldPatch"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

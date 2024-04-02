@@ -1,6 +1,6 @@
 package moe.nea.potatocrime.entity
 
-import moe.nea.potatocrime.registry.PotatoRegistry
+import moe.nea.potatocrime.PotatoCrime
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.ai.goal.*
 import net.minecraft.entity.attribute.DefaultAttributeContainer
@@ -8,6 +8,7 @@ import net.minecraft.entity.attribute.EntityAttributes
 import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.entity.mob.PathAwareEntity
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.world.World
 
 class PotatoGuardEntity(entityType: EntityType<out PotatoGuardEntity>, world: World?) :
@@ -40,10 +41,7 @@ class PotatoGuardEntity(entityType: EntityType<out PotatoGuardEntity>, world: Wo
                 PlayerEntity::class.java,
                 true
             ) { player ->
-                (player as PlayerEntity)
-                    .inventory
-                    .getMatchingStacks { it.isIn(PotatoRegistry.carrotIshItems) }
-                    .isNotEmpty()
+                PotatoCrime.hasContraband(player as ServerPlayerEntity)
             }
         )
     }
