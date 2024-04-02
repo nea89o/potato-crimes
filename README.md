@@ -8,6 +8,8 @@ A mod for the [24w14potato April Fools Snapshot](https://www.minecraft.net/en-us
 
 Made in about 3 or so hours for [the 24w14potato ModFest FlashFest](https://modfest.net/).
 
+Modrinth download: https://modrinth.com/mod/potato-crimes
+
 <details>
 
 <summary>Images</summary>
