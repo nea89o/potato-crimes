@@ -30,7 +30,7 @@ public abstract class ShillCarrotsToVillagerPatch extends MerchantEntity {
     @Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
     private void onInteractMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
         var itemInHand = player.getStackInHand(hand);
-        if (this.isAlive() && !this.hasCustomer() && !this.isSleeping()) {
+        if (this.isAlive() && !this.hasCustomer() && !this.isSleeping() && this.method_58842()) { // method_58842 = isPotato
             if (itemInHand.isOf(Items.CARROT)) {
                 if (!isClient()) {
                     playSound(SoundEvents.ENTITY_VILLAGER_TRADE);
