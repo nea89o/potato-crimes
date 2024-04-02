@@ -7,6 +7,7 @@ import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
@@ -32,6 +33,7 @@ public abstract class ShillCarrotsToVillagerPatch extends MerchantEntity {
         if (this.isAlive() && !this.hasCustomer() && !this.isSleeping()) {
             if (itemInHand.isOf(Items.CARROT)) {
                 if (!isClient()) {
+                    playSound(SoundEvents.ENTITY_VILLAGER_TRADE);
                     itemInHand.setCount(itemInHand.getCount() - 1);
                     player.giveItemStack(new ItemStack(Items.EMERALD));
                     player.sendMessage(PotatoTranslations.INSTANCE.getVillagerTrade().format());
@@ -40,6 +42,7 @@ public abstract class ShillCarrotsToVillagerPatch extends MerchantEntity {
             }
             if (itemInHand.isOf(Items.GOLDEN_CARROT)) {
                 if (!isClient()) {
+                    playSound(SoundEvents.ENTITY_VILLAGER_TRADE);
                     itemInHand.setCount(itemInHand.getCount() - 1);
                     player.giveItemStack(new ItemStack(Items.EMERALD_BLOCK));
                     player.sendMessage(PotatoTranslations.INSTANCE.getVillagerTrade().format());

@@ -54,8 +54,6 @@ object PotatoCrime : ModInitializer {
 
     fun hasContraband(entity: ServerPlayerEntity): Boolean {
         return entity.inventory
-            .getMatchingStacks { it.isIn(PotatoRegistry.carrotIshItems) }
-            .isNotEmpty()
-
+            .contains { it.isIn(PotatoRegistry.carrotIshItems) }
     }
 }
