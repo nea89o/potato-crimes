@@ -76,7 +76,7 @@ class NameProvider(dataOutput: FabricDataOutput, registryLookup: CompletableFutu
         translationBuilder: TranslationBuilder
     ) {
         translationBuilder.add(PotatoRegistry.potatoGuard, "Potato Guard")
-        translationBuilder.add(PotatoRegistry.contraband, "Contraband")
+        translationBuilder.add(PotatoRegistry.contraband, "Smugglers Brown Paper Bag")
         PotatoTranslations.allTranslations.forEach {
             translationBuilder.add(it.translationKey, it.default)
         }

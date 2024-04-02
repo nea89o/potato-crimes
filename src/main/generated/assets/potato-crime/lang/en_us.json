@@ -1,9 +1,9 @@
 {
   "entity.potato-crime.potato_guard": "Potato Guard",
-  "item.potato-crime.contraband": "Contraband",
+  "item.potato-crime.contraband": "Smugglers Brown Paper Bag",
   "potato-crime.text.arrest": "You broke the law by bringing carrots into this potato dimension!",
   "potato-crime.text.fill-level": "Hidden carrots: %s/1000.",
   "potato-crime.text.item-group": "Potato Crimes",
   "potato-crime.text.no-carrots": "No carrots to deposit.",
-  "potato-crime.text.trade": "You got that good stuff. Here, have an emerald."
+  "potato-crime.text.trade": "Oh, you got that good stuff! Here, have some emeralds."
 }
