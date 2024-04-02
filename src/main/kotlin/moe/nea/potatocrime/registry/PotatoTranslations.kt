@@ -21,6 +21,6 @@ object PotatoTranslations {
     val noCarrotsToDeposit = PT("no-carrots", "No carrots to deposit.")
     val itemGroup = PT("item-group", "Potato Crimes")
     val contrabandFillText = PT("fill-level", "Hidden carrots: %s/1000.")
-    val youBrokeTheLaw = PT("arrest", "You broke the law by bringing carrots into those holy land!")
-
+    val youBrokeTheLaw = PT("arrest", "You broke the law by bringing carrots into this potato dimension!")
+    val villagerTrade = PT("trade","Oh, you got that good stuff! Here, have some emeralds.")
 }

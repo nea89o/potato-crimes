@@ -41,8 +41,8 @@ class ContrabandItem : Item(
         context: TooltipContext
     ) {
         val count = stack.getContrabandCount()
-        tooltip.add(
-            PotatoTranslations.contrabandFillText.format(count.toString()).styled { it.withColor(Formatting.DARK_GRAY) })
+        tooltip.add(PotatoTranslations.contrabandFillText.format(count.toString())
+            .styled { it.withColor(Formatting.DARK_GRAY) })
     }
 
     override fun use(world: World, user: PlayerEntity, hand: Hand): TypedActionResult<ItemStack> {

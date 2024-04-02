@@ -49,6 +49,7 @@ object PotatoCrime : ModInitializer {
                 }
             }
         })
+
     }
 
     fun hasContraband(entity: ServerPlayerEntity): Boolean {
